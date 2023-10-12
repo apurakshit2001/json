@@ -1,0 +1,22 @@
+// const result = jsonData.filter(checkAge);
+
+// function checkAge(person) {
+//     if (person.age > 30) {
+//         console.log("He is a Master");
+//     } else if (person.age < 20) {
+//         console.log("He is a Disciple");
+//     } else if (person.age < 30) {
+//         console.log("He is a Grand Master");
+//     } else {
+//         console.log("He is just another Noob");
+//     }
+//     return person.age >= 31;
+// }
+
+// const data1 = jsonData.map((person) => {
+//     return { fullname: person.name };
+// });
+
+// console.log(data1);
+
+// console.log(result);

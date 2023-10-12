@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSON Filter and Search</title>
+</head>
+<script>
+    const jsonData = [
+        { id: 1, name: 'John', age: 25 },
+        { id: 2, name: 'Jane', age: 30 },
+        { id: 3, name: 'Bob', age: 28 },
+
+    ];
+
+
+    function displayResults(results) {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
+        if (results.length === 0) {
+            resultsDiv.textContent = 'No results found.';
+        } else {
+            results.forEach((result) => {
+                const resultElement = document.createElement('div');
+                resultElement.textContent = `Name: ${result.name}, Age: ${result.age}`;
+                resultsDiv.appendChild(resultElement);
+            });
+        }
+    }
+
+
+    function filterJSON(criteria) {
+        return jsonData.filter((item) => {
+
+            return item.name.toLowerCase().includes(criteria.toLowerCase());
+        });
+    }
+
+
+    function searchJSON() {
+        const searchInput = document.getElementById('searchInput');
+        const searchTerm = searchInput.value.trim();
+
+        const filteredResults = filterJSON(searchTerm);
+
+        displayResults(filteredResults);
+    }
+</script>
+
+<body>
+    <h1>JSON Filter and Search</h1>
+    <label for="searchInput">Search:</label>
+    <input type="text" id="searchInput" placeholder="Enter search term">
+    <button onclick="searchJSON()">Search</button>
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
